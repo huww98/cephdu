@@ -40,7 +40,10 @@ def du(path: Path, human_readable=False):
 
 
 def main():
-    parser = argparse.ArgumentParser(conflict_handler='resolve')
+    parser = argparse.ArgumentParser(
+        description='A "du" like utility to estimate file space usage that utilizes CephFS extended file attribute "ceph.dir.rbytes".',
+        conflict_handler='resolve'
+    )
     parser.add_argument('path', type=Path, default=Path('.'))
     parser.add_argument('-h', '--human-readable', action='store_true',
                         help='print sizes in human readable format (e.g., 1K 234M 2G)')
