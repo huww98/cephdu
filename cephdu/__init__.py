@@ -70,7 +70,3 @@ def main():
                         help='print the total for a directory or file only if it is N or fewer levels below the command line argument')
     args = parser.parse_args()
     du(**vars(args))
-
-
-if __name__ == '__main__':
-    main()
